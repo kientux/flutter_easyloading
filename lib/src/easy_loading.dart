@@ -235,12 +235,21 @@ class EasyLoading {
   /// init EasyLoading
   static TransitionBuilder init({
     TransitionBuilder? builder,
+    Color? backgroundColor,
   }) {
     return (BuildContext context, Widget? child) {
       if (builder != null) {
-        return builder(context, FlutterEasyLoading(child: child));
+        return builder(
+            context,
+            FlutterEasyLoading(
+              child: child,
+              backgroundColor: backgroundColor,
+            ));
       } else {
-        return FlutterEasyLoading(child: child);
+        return FlutterEasyLoading(
+          child: child,
+          backgroundColor: backgroundColor,
+        );
       }
     };
   }

@@ -27,10 +27,12 @@ import './overlay_entry.dart';
 
 class FlutterEasyLoading extends StatefulWidget {
   final Widget? child;
+  final Color? backgroundColor;
 
   const FlutterEasyLoading({
     Key? key,
     required this.child,
+    this.backgroundColor,
   })  : assert(child != null),
         super(key: key);
 
@@ -53,6 +55,7 @@ class _FlutterEasyLoadingState extends State<FlutterEasyLoading> {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: widget.backgroundColor,
       child: Overlay(
         initialEntries: [
           EasyLoadingOverlayEntry(
